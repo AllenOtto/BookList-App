@@ -35,5 +35,17 @@ class UI {
             document.querySelector('.alert').remove();
         }, 3000);
     }
+
+    deleteBook(target) {
+        if(target.className === 'delete') {
+            target.parentElement.parentElement.remove();
+        }
+    }
+
+    clearFields() {
+        document.getElementById('title').value = "";
+        document.getElementById('author').value = "";
+        document.getElementById('isbn').value = "";
+    }
     
 }
