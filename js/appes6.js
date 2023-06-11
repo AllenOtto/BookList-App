@@ -16,8 +16,24 @@ class UI {
             <td>${book.isbn}</td>
             <td><a href="" class="delete">X</a></td>
         `;
-        
+
         list.appendChild(row);
+    }
+
+    showAlert(message, className) {
+        const div = document.createElement('div');
+        // Give it a class name
+        div.className = `alert ${className}`;
+        div.appendChild(document.createTextNode(message));
+        const container = document.querySelector('.continer');
+        //Get Form
+        const form = document.querySelector('#book-form');
+        //Insert alert
+        container.insertBefore(div, form);
+        // Timeout after 3 seconds
+        setTimeout(function() {
+            document.querySelector('.alert').remove();
+        }, 3000);
     }
     
 }
